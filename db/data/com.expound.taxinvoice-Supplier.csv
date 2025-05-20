@@ -1,0 +1,3 @@
+SupplierID,SupplierName,SupplierGSTIN,SupplierAddress,ContactNumber,EmailAddress
+66666666-6666-6666-6666-666666666666,XYZ Solutions,29AACCT1234A1Z9,"456, Tech Park, Bangalore",9876543210,xyz@example.com
+66666666-6666-6666-6666-666666666667,OmniTech Pvt Ltd,29AAACO1234L1Z1,"21, IT Hub, Hyderabad",8765432190,omnitech@example.com

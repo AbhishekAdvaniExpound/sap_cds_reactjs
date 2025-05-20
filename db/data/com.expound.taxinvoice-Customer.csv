@@ -1,0 +1,3 @@
+CustomerID,CustomerName,CustomerAddress,CustomerGSTIN,ContactNumber,EmailAddress
+22222222-2222-2222-2222-222222222222,ABC Enterprises,"123, Market Road, Mumbai",27AAEPM1234C1Z2,9123456789,abc@example.com
+22222222-2222-2222-2222-222222222223,DEF Traders,"88, Connaught Place, Delhi",07ABCDE1234F2Z5,9988776655,def@example.com
