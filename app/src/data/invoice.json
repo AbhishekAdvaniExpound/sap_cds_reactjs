@@ -1,0 +1,51 @@
+{
+  "invoice_number": "283/24-25 DT.17.03.2025",
+  "invoice_date": "2025-03-17",
+  "exporter": {
+    "name": "MERIT POLYMERS PRIVATE LIMITED",
+    "address": "SURVEY NO.97/2, KACHIGAM, NANI DAMAN-396210 INDIA"
+  },
+  "consignee": {
+    "name": "MS.KENPOLY MANUFACTURERS LIMITED",
+    "address": "LUNGI 2ND ROAD, INDUSTRIAL AREA, P.O.BOX 30331, NAIROBI GPO 00100, NAIROBI, KENYA"
+  },
+  "buyer_if_other_than_consignee": "Same as consignee",
+  "country_of_origin": "INDIA",
+  "country_of_final_destination": "KENYA",
+  "terms_of_delivery": "CIF",
+  "terms_of_payment": "90 DAYS D/A OF B/L DATE",
+  "items": [
+    {
+      "sr_no": 1,
+      "description": "FILLED POLY PROPYLENE COMPOUND (Containing 80% + 1% Filler Content) (Calcium Carbonate Filled Compound)",
+      "hs_code": "3902.90.00",
+      "quantity_bags": 1055,
+      "net_weight_kg": 26750.0,
+      "rate_per_kg_usd": 0.42332,
+      "amount_usd": 6677.29,
+      "lot_no": "Q1 TO 10S5"
+    },
+    {
+      "sr_no": 2,
+      "description": "COLOR MASTER BATCHES",
+      "hs_code": "3206.49.00",
+      "quantity_bags": 265,
+      "net_weight_kg": 6500.0,
+      "rate_per_kg_usd": 2.73049,
+      "amount_usd": 29011.46,
+      "lot_no": "Q1 TO 10S5"
+    }
+  ],
+  "total_fob_usd": 35688.75,
+  "freight_usd": 260.0,
+  "insurance_usd": 26.0,
+  "total_cif_value_usd": 35974.75,
+  "amount_in_words": "CIF USD THIRTY FIVE THOUSAND SIX HUNDRED SEVENTY EIGHT AND CENTS SEVENTY FIVE ONLY",
+  "declaration": {
+    "place_of_receipt_by_pre_carrier": "NHAVA SHEVA",
+    "vessel_flight_no": "R. EXPRESS",
+    "port_of_loading": "NHAVA SHEVA INDIA",
+    "port_of_discharge": "MOMBASA KENYA",
+    "final_destination": "NAIROBI"
+  }
+}

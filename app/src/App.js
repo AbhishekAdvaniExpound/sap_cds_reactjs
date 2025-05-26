@@ -3,10 +3,38 @@ import axios from "axios";
 import { PDFDownloadLink, PDFViewer, pdf } from "@react-pdf/renderer";
 import InvoicePDF from "./invoiceViews/InvoicePDF";
 import ViewOne from "./invoiceViews/ViewOne";
+import XmlTOJsonInvoice from "./invoiceViews/XmlTOJsonInvoice";
+import invoiceData from "./data/invoice.json";
+import ExportInvoiceForCustomer from "./invoiceViews/ExportInvoiceForCustomer";
+import ExportInvoiceForCustomerPdf from "./invoiceViews/XmlTOJsonInvoice";
 
 function App() {
   const [deliveries, setDeliveries] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [order, setOrder] = useState(null);
+
+  useEffect(() => {
+    const fetchOrder = async () => {
+      try {
+        const config = {
+          method: "get",
+          url: "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('1')?$expand=to_Item,to_Partner",
+          headers: {
+            APIKey: "LoD9Bzn9nRAaKhEsXRGaWz27PNnFl30G",
+            Accept: "application/json",
+            Cookie: "sap-usercontext=sap-client=100",
+          },
+        };
+        const response = await axios(config);
+        console.log(response.data.d, "response");
+        setOrder(response.data.d);
+      } catch (error) {
+        console.error("Error fetching order:", error);
+      }
+    };
+
+    fetchOrder();
+  }, []);
 
   useEffect(() => {
     axios
@@ -102,6 +130,26 @@ function App() {
 
   return (
     <>
+      <div>
+        <PDFViewer width="100%" height="800">
+          <ExportInvoiceForCustomerPdf data={invoiceData} />
+        </PDFViewer>
+      </div>
+      <div className="p-4">
+        <h1 className="text-xl font-bold mb-4">SAP Invoice Download</h1>
+        {order ? (
+          <PDFDownloadLink
+            document={<XmlTOJsonInvoice order={order} />}
+            fileName={`Invoice-${order.SalesOrder}.pdf`}
+          >
+            {({ loading }) =>
+              loading ? "Preparing document..." : "Download PDF Invoice"
+            }
+          </PDFDownloadLink>
+        ) : (
+          "Loading order..."
+        )}
+      </div>
       <div
         style={{
           padding: "20px",

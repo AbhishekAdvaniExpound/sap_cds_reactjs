@@ -5,11 +5,13 @@
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,
+  "main": "srv/server.js",
   "dependencies": {
     "@sap/cds": "^8",
     "@sap/ux-specification": "^1.124.16",
     "@sap/ux-ui5-tooling": "^1.17.5",
-    "express": "^4"
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.10.0",
@@ -17,14 +19,14 @@
   },
   "proxy": "http://localhost:3000",
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "git:quick": "git add . && git commit -m \"quick push\" && git push"
   },
-  
   "cds": {
     "requires": {
       "cors": {
         "kind": "cors",
-        "origin": "*", 
+        "origin": "*",
         "allowMethods": "GET,POST,PUT,DELETE,OPTIONS",
         "allowHeaders": "Content-Type,Authorization"
       }

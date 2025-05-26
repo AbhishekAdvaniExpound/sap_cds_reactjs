@@ -1,4 +1,0 @@
-ID;delivery_ID;product_ID;quantity;price;taxRate;taxAmount;totalPrice
-item0001-0001-0001-0001-000000000001;dddd1111-dddd-dddd-dddd-dddddddddddd;aaa11111-aaaa-aaaa-aaaa-aaaaaaaaaaaa;1;1000.00;18.00;180.00;1180.00
-item0002-0002-0002-0002-000000000002;dddd1111-dddd-dddd-dddd-dddddddddddd;bbb22222-bbbb-bbbb-bbbb-bbbbbbbbbbbb;2;300.00;12.00;72.00;672.00
-item0003-0003-0003-0003-000000000003;dddd2222-dddd-dddd-dddd-dddddddddddd;bbb22222-bbbb-bbbb-bbbb-bbbbbbbbbbbb;2;300.00;12.00;72.00;672.00
