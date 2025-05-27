@@ -96,3 +96,17 @@ cds deploy --to mongodb
     }
   }
 }
+
+
+<------------------------------------------------------------->
+
+🛠️ 3. Configure the Destination in SAP BTP
+In the SAP BTP Cockpit:
+Navigate to Connectivity > Destinations.
+Create a new destination named sap-destination.
+Set the following properties:
+URL: https://<sap-system>
+Authentication: Choose the appropriate method (e.g., BasicAuthentication, OAuth2ClientCredentials).
+Provide necessary credentials.
+This destination allows your CAP application to communicate with the external SAP service securely.
+

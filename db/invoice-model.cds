@@ -45,6 +45,7 @@ entity InvoiceItem {
 }
 
 entity Declaration {
+    key ID              : UUID;
   place_of_receipt_by_pre_carrier : String;
   vessel_flight_no                : String;
   port_of_loading                 : String;

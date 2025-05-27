@@ -1,6 +1,20 @@
 // srv/server.js
 const cds = require("@sap/cds");
 
+cds.on('bootstrap', app => {
+  const path = require('path')
+  const express = require('express')
+  app.use('/', express.static(path.join(__dirname, 'app/build')))
+})
+
+const remoteService = await cds.connect.to('RemoteService');
+
+  this.on('READ', 'Entities', req => {
+    return remoteService.run(req.query);
+  });
+
+
+
 cds.on("bootstrap", (app) => {
   const cors = require("cors");
   app.use(

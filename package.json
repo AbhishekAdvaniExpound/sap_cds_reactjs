@@ -17,6 +17,7 @@
   "devDependencies": {
     "@cap-js/cds-types": "^0.10.0",
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8",
     "concurrently": "^8.0.1",
     "rimraf": "^5.0.0"
   },
@@ -35,47 +36,55 @@
     "frontend:test": "cd react-app && npm test",
     "start:full": "concurrently \"npm run start\" \"npm run frontend:start\"",
     "git:quick": "git add . && git commit -m \"quick push\" && git push",
-    "clean": "rimraf gen db/*.sqlite"
+    "clean": "rimraf gen db/*.sqlite",
+    "postbuild": "cp -r build/* ../approuter/resources/"
   },
   "cds": {
     "requires": {
-      "cors": {
-        "kind": "cors",
-        "origin": "*",
-        "allowMethods": "GET,POST,PUT,DELETE,OPTIONS",
-        "allowHeaders": "Content-Type,Authorization"
-      },
-      "db": {
-        "kind": "sqlite",
-        "model": [
-          "db"
-        ]
-      },
-      "hana": {
-        "kind": "hana",
-        "model": [
-          "db"
-        ],
+      "RemoteService": {
+        "kind": "odata-v2",
+        "model": "srv/external/RemoteService",
         "credentials": {
-          "url": "<hana-connection-url>"
-        }
-      },
-      "mysql": {
-        "kind": "mysql",
-        "model": [
-          "db"
-        ],
-        "credentials": {
-          "url": "mysql://user:pass@host:3306/db"
-        }
-      },
-      "mongo": {
-        "kind": "mongodb",
-        "model": [
-          "db"
-        ],
-        "credentials": {
-          "url": "mongodb://user:pass@host:27017/db"
+          "destination": "sap-destination"
+        },
+        "cors": {
+          "kind": "cors",
+          "origin": "*",
+          "allowMethods": "GET,POST,PUT,DELETE,OPTIONS",
+          "allowHeaders": "Content-Type,Authorization"
+        },
+        "db": {
+          "kind": "sqlite",
+          "model": [
+            "db"
+          ]
+        },
+        "hana": {
+          "kind": "hana",
+          "model": [
+            "db"
+          ],
+          "credentials": {
+            "url": "<hana-connection-url>"
+          }
+        },
+        "mysql": {
+          "kind": "mysql",
+          "model": [
+            "db"
+          ],
+          "credentials": {
+            "url": "mysql://user:pass@host:3306/db"
+          }
+        },
+        "mongo": {
+          "kind": "mongodb",
+          "model": [
+            "db"
+          ],
+          "credentials": {
+            "url": "mongodb://user:pass@host:27017/db"
+          }
         }
       }
     }
