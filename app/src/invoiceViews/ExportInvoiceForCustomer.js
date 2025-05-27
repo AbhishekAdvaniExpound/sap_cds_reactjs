@@ -32,7 +32,7 @@ const ExportInvoiceForCustomer = ({ data }) => {
   const summaryTable = {
     display: "table",
     width: "100%",
-    marginTop: 10,
+    marginTop: "0px",
     border: "1px solid black",
   };
 
@@ -43,12 +43,12 @@ const ExportInvoiceForCustomer = ({ data }) => {
 
   const summaryColLabel = {
     width: "85%",
-    padding: 4,
+    padding: "0px",
     border: "1px solid black",
   };
   const summaryColValue = {
     width: "15%",
-    padding: 4,
+    padding: "0px",
     textAlign: "right",
   };
   const amountWords = {

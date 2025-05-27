@@ -1,3 +1,10 @@
+cds deploy --to sqlite
+cds deploy --to hana
+cds deploy --to postgres
+cds deploy --to mysql
+cds deploy --to mongodb
+
+
 {
   "name": "capm-smartforms",
   "version": "1.0.0",
@@ -10,7 +17,6 @@
     "@sap/cds": "^8",
     "@sap/ux-specification": "^1.124.16",
     "@sap/ux-ui5-tooling": "^1.17.5",
-    "@sap/xssec": "^4.7.0",
     "cors": "^2.8.5",
     "express": "^4.21.2"
   },
@@ -58,6 +64,15 @@
         ],
         "credentials": {
           "url": "<hana-connection-url>"
+        }
+      },
+      "postgres": {
+        "kind": "postgres",
+        "model": [
+          "db"
+        ],
+        "credentials": {
+          "url": "postgres://user:pass@host:5432/db"
         }
       },
       "mysql": {
